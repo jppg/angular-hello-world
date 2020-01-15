@@ -1,0 +1,39 @@
+<input [(ngModel)]="name" type="text">
+{{name}}
+<button (click)="showHidden()">Show/Hide</button>
+
+<h2 *ngIf="displayName; else elseBlock">Welcome {{name}}</h2>
+
+<ng-template #elseBlock>
+    <div>Name is hidden</div>
+</ng-template>
+
+<div *ngFor="let color of colors; index as i; first as f; last as l; odd as o; even as e">
+    <h2>{{i}} {{color}} {{f}} {{l}} {{o}} {{e}}</h2>
+</div>
+
+<div>{{"Hello " + parentData}}</div>
+
+<div>{{"Hello " + externalName}}</div>
+
+<button (click)="fireEvent()">Send Event</button>
+
+<h2>{{name | lowercase }}</h2>
+<h2>{{name | uppercase }}</h2>
+<h2>{{name | titlecase }}</h2>
+<h2>{{name | slice:3:5 }}</h2>
+<h2>{{name | json }}</h2>
+
+<h2>{{5.678 | number:'1.2-3' }}</h2>
+<h2>{{5.678 | number:'3.4-5' }}</h2>
+<h2>{{5.678 | number:'3.1-2' }}</h2>
+
+<h2>{{0.25 | percent }}</h2>
+<h2>{{0.25 | currency }}</h2>
+<h2>{{0.25 | currency: 'EUR' }}</h2>
+<h2>{{0.25 | currency: 'EUR' : 'code' }}</h2>
+
+<h2>{{date}}</h2>
+<h2>{{date | date:'short'}}</h2>
+<h2>{{date | date:'shortDate'}}</h2>
+<h2>{{date | date:'shortTime'}}</h2>
